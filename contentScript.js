@@ -13,7 +13,7 @@ var fa = document.createElement('style');
 
 getYelpBusinesses();
 
-var iframe = "<li id='yelp-review-link'><a class='af75dbc5 _40f1eb59'><span>Yelp Reviews</span></a></li>";
+var iframe = "<li id='yelp-review-link'><a class='af75dbc5 _40f1eb59' href='#yelp-review'><span>Yelp Reviews</span></a></li>";
 $('[id=reviews-link]').after(iframe);
 
 MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
@@ -65,14 +65,14 @@ function getYelpReviews() {
 }
 
 function renderReviews() {
-	let reviewList = '<div id="yelpReview">';
+	let reviewList = '<div id="yelp-review"><div id="review-title">What 3 people are saying on Yelp</div>';
 	$.each(reviews, function(index, value) {
-		reviewList += '<div class="collection-item avatar"><span class="name">'+ value.user.name + '</span><p class="review-comment">'+ value.text +'</p>';
+		reviewList += '<div class="collection-item avatar"><div id="name-container"><span class="name">'+ value.user.name + '</span>';
 		
 		for(i = 0; i < value.rating; i++) {
 			reviewList += '<i class="fas fa-star" style="color: #f4d142"></i>';
 		}
-		reviewList += '</div>';
+		reviewList += '</div><p class="review-comment">'+ value.text +'</p></div>';
 	});
 	reviewList += '</div>';
 	$('[id=reviews]').after(reviewList);

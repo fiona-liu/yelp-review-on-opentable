@@ -1,10 +1,24 @@
+html {
+	 scroll-behavior: smooth;
+}
 iframe {
 	z-index: 1000;
 }
 
-#yelpReview {
-	display: flex;
+#yelp-review {
+	display: block;
 	flex-direction: column;
+	padding: 0 0 4rem;
+    transition: transform 0.15s ease-in-out;
+    backface-visibility: hidden;
+}
+
+#yelp-review::before {
+  content: "";
+  display: block;
+  height: 48px; /* fixed header height*/
+  margin: -48px 0 0; /* negative fixed header height */
+
 }
 
 .collection-item {
@@ -17,8 +31,32 @@ iframe {
 .name {
 	font-weight: bold;
 	font-size: 16px;
+	margin-right: 10px;
+}
+
+#name-container {
+	margin-bottom: 10px
 }
 
 .review-comment {
 	width: 80%;
+}
+
+#yelp-review-anchor{
+  display: block;
+  height: 48px; /*same height as header*/
+  margin-top: -48px; /*same height as header*/
+  visibility: hidden;
+}
+
+#review-title {
+	font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.33;
+    color: #2d333f;
+    border-bottom: 1px solid #d8d9db;
+    padding-bottom: 1rem;
+    margin: 0 0 1rem;
+    display: flex;
+    justify-content: space-between;
 }
