@@ -1,0 +1,24 @@
+iframe {
+	z-index: 1000;
+}
+
+#yelpReview {
+	display: flex;
+	flex-direction: column;
+}
+
+.collection-item {
+	padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px #d8d9db;
+    color: #2d333f;
+}
+
+.name {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.review-comment {
+	width: 80%;
+}
